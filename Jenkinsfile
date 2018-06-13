@@ -5,13 +5,21 @@ options {
 disableConcurrentBuilds()
 }
 stages {
-
-stage("Build") {
+  
+stage("buildsrc") {
+steps { buildsrc() }
+}
+}
+stage("Buildimg") {
 steps { buildApp() }
 }
 }
 }
 // steps
+def buildsrc() {
+dir ('' ) {
+mvn clean install
+}
 def buildApp() {
 dir ('' ) {
 def appImage = docker.build("eaiesbhub/mulehelloworld:${BUILD_NUMBER}")
