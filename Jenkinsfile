@@ -18,7 +18,7 @@ steps { buildApp() }
 // steps
 def buildsrc() {
 dir ('' ) {
-mvn clean install
+mvn install
 }
 }
 def buildApp() {
