@@ -9,7 +9,7 @@ stages {
 stage("buildsrc") {
 steps { buildsrc() }
 }
-}
+
 stage("Buildimg") {
 steps { buildApp() }
 }
