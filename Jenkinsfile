@@ -10,6 +10,14 @@ stage("buildsrc") {
 steps { buildsrc() }
 }
 
+stage('renamiing the target zip file') {
+    steps {
+         bash '''#!/bin/bash
+                 mv target/helloworld-1.0.0-SNAPSHOT.zip helloworld.zip 
+         '''
+    }
+}  
+  
 stage("Buildimg") {
 steps { buildApp() }
 }
@@ -18,10 +26,9 @@ steps { buildApp() }
 // steps
 def buildsrc() {
 dir ('.' ) {
-mvn clean install
-}
-  dir ('.' ) {
-mv target/helloworld-1.0.0-SNAPSHOT.zip helloworld.zip
+    bash '''#!/bin/bash
+                 mvn clean install 
+         '''
 }
 }
 def buildApp() {
