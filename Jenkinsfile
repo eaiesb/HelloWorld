@@ -41,7 +41,7 @@ dir ('' ) {
 def appImage = docker.build("eaiesbhub/mulehelloworld:${BUILD_NUMBER}")
 }
 }
-def deploy(environment) {
+def deploy() {
 
 	def containerName = 'mulehelloworld'
 
