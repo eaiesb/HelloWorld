@@ -1,7 +1,7 @@
 #!/usr/bin/groovy
 pipeline {
     environment {
-        JAVA_HOME = /app/ciplatform/jdk1.8.0_101
+        JAVA_HOME = tool('java')
     }
 agent any
 options {
