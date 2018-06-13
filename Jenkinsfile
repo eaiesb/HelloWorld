@@ -19,6 +19,8 @@ steps { buildApp() }
 def buildsrc() {
 dir ('.' ) {
 mvn clean install
+}
+  dir ('.' ) {
 mv target/helloworld-1.0.0-SNAPSHOT.zip helloworld.zip
 }
 }
