@@ -20,6 +20,7 @@ def buildsrc() {
 dir ('' ) {
 mvn clean install
 }
+}
 def buildApp() {
 dir ('' ) {
 def appImage = docker.build("eaiesbhub/mulehelloworld:${BUILD_NUMBER}")
