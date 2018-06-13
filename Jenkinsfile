@@ -19,13 +19,15 @@ stage('renamiing the target zip file') {
     }
 }  
 stage("Buildimg") {
-slackSend (message: 'Building the image')
-steps { buildApp() }
+steps { 
+	slackSend (message: 'Building the image')
+	buildApp() }
 }
 }
 stage("Deploy - Dev") {
-  steps { deploy() }
-  slackSend (message: 'container deployed sucessfully')
+  steps { deploy() 
+	  slackSend (message: 'container deployed sucessfully')
+	}
 }
 }
 // steps
