@@ -20,7 +20,6 @@ stage('renamiing the target zip file') {
          '''
     }
 }  
-  
 stage("Buildimg") {
 steps { buildApp() }
 }
