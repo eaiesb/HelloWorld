@@ -26,9 +26,7 @@ steps { buildApp() }
 // steps
 def buildsrc() {
 dir ('.' ) {
-    bash '''#!/bin/bash
-                 mvn clean install 
-         '''
+    sh 'mvn clean install'
 }
 }
 def buildApp() {
