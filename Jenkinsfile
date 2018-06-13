@@ -24,7 +24,7 @@ steps {
 	buildApp() }
 }
 }
-stage("Deploy - Dev") {
+stage("Deploy") {
   steps { deploy() 
 	  slackSend (message: 'container deployed sucessfully')
 	}
