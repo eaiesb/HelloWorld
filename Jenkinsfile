@@ -49,3 +49,4 @@ def deploy(environment) {
 	sh "docker run -d --name ${containerName} eaiesbhub/mulehelloworld:${BUILD_NUMBER}"
 
 }
+}
