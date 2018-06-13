@@ -29,6 +29,7 @@ stage("Deploy") {
 	}
 }
 }
+}
 // steps
 def buildsrc() {
 dir ('.' ) {
@@ -48,5 +49,4 @@ def deploy(environment) {
 	sh "docker ps -a -f name=${containerName} -q | xargs -r docker rm"
 	sh "docker run -d --name ${containerName} eaiesbhub/mulehelloworld:${BUILD_NUMBER}"
 
-}
 }
