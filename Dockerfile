@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM eaiesbhub/mule39ce:latest
 
 ARG MULE_HOME=/root/mule-standalone-3.9.0
 
