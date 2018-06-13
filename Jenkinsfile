@@ -26,7 +26,7 @@ steps { buildApp() }
 // steps
 def buildsrc() {
 dir ('.' ) {
-    sh 'mvn clean install'
+    sh '/app/ciplatform/apache-maven-3.3.9/bin/mvn clean install'
 }
 }
 def buildApp() {
