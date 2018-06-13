@@ -23,7 +23,6 @@ steps {
 	slackSend (message: 'Building the image')
 	buildApp() }
 }
-}
 stage("Deploy") {
   steps { deploy() 
 	  slackSend (message: 'container deployed sucessfully')
