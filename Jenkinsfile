@@ -19,8 +19,12 @@ stage('renamiing the target zip file') {
     }
 }  
 stage("Buildimg") {
+slackSend (message: 'Building the image')
 steps { buildApp() }
 }
+}
+stage("Deploy - Dev") {
+  steps { deploy() }
 }
 }
 // steps
@@ -33,4 +37,13 @@ def buildApp() {
 dir ('' ) {
 def appImage = docker.build("eaiesbhub/mulehelloworld:${BUILD_NUMBER}")
 }
+}
+def deploy(environment) {
+
+	def containerName = 'mulehelloworld'
+
+	sh "docker ps -f name=${containerName} -q | xargs --no-run-if-empty docker stop"
+	sh "docker ps -a -f name=${containerName} -q | xargs -r docker rm"
+	sh "docker run -d --name ${containerName} eaiesbhub/mulehelloworld:${BUILD_NUMBER}"
+
 }
