@@ -15,9 +15,7 @@ steps { buildsrc() }
 
 stage('renamiing the target zip file') {
     steps {
-         bash '''#!/bin/bash
-                 mv target/helloworld-1.0.0-SNAPSHOT.zip helloworld.zip 
-         '''
+               sh 'mv target/helloworld-1.0.0-SNAPSHOT.zip helloworld.zip'
     }
 }  
 stage("Buildimg") {
