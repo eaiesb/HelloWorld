@@ -13,7 +13,7 @@ stage("buildsrc") {
 steps { buildsrc() }
 }
 
-stage('renamiing the target zip file') {
+stage('renaming the target zip file') {
     steps {
                sh 'mv target/helloworld-1.0.0-SNAPSHOT.zip helloworld.zip'
     }
